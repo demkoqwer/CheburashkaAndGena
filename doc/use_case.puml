@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Чебурашка" as Cheb
+actor "Гена" as Gena
+
+rectangle "Строительство Дома Дружбы" {
+  usecase "Построить дом" as UC1
+  usecase "Найти друга" as UC2
+  usecase "Играть на гармошке" as UC3
+  usecase "Добавить кирпич" as UC4
+  usecase "Зарегистрировать друзей" as UC5
+
+  Cheb --> UC1
+  Gena --> UC1
+  Cheb --> UC2
+  Gena --> UC2
+  Gena --> UC3
+  Cheb --> UC4
+  Gena --> UC4
+  UC5 <. UC1 : <<extends>>
+}
+@enduml
